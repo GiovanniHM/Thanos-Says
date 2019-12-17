@@ -1,0 +1,250 @@
+@import "compass/css3";
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400|Raleway:300);
+
+*{
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  background: #000;
+  perspective: 0px;
+  perspective-origin: 50% 50%;
+}
+.infinity-stone{
+  display: inline-block;
+	transition: all 0.85s cubic-bezier(0.175,0.885,0.320,1.275);
+
+  /* //text-align: center;  */
+	position: relative;
+	/* width: 80px; */
+	height: 200px;
+	transform-style: preserve-3d;
+  transform-origin: 50% 50%;
+  transform: rotateY(-20deg) rotateZ(-5deg);
+   -webkit-animation: rotating 5s linear infinite;
+  margin-right: 50px;
+}
+.stone-face {
+  background: #8b0000;
+  height: 80px;
+  width: 50px;
+  margin-top: 50px;
+  position: absolute;
+  border-radius: 20px;
+  opacity: 0.5;
+  box-shadow: inset 0 0 50px 0px red,  0 0 100px 15px red;
+  z-index: 99;
+}
+
+.stone-face:before, 
+.stone-face:after{
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    position: absolute;
+    border-radius: 50px;
+    opacity: 0.35;
+    z-index: 1;
+}
+.stone-face:before{
+    top: 0px; 
+  border-bottom: 80px solid black;
+}
+.stone-face:after{
+  bottom: 0px;
+  border-top: 80px solid black;
+}
+.stone-face-front{
+ transform: translate3d(0, 0, 0px); 
+}
+.stone-face-back{
+  transform:  rotateY(180deg) translate3d(0, 0, 5px);
+}
+
+@-webkit-keyframes rotating {
+    0%{
+        -webkit-transform: rotateY(-20deg)  rotateZ(-3deg);
+    }
+    50%{
+        -webkit-transform: rotateY(20deg) rotateZ(3deg);
+    }
+    100%{
+        -webkit-transform: rotateY(-20deg) rotateZ(-3deg);
+    }
+}
+
+/* ----------------------------------------->css grid */
+.container{
+  margin: 0;
+  padding: 0;
+  align-content: center;
+  justify-content: center;
+  display: grid;
+  column-gap: 150px;
+  row-gap:10px ;
+  grid-template-columns: 1fr, 1fr, 1fr, 1fr, 1fr; 
+  grid-template-areas: ". redA orangeA ."                        
+                        "greenA playA playA purpleA"                       
+                        ". yellowA blueA .";
+                        
+}
+.btn{
+  grid-area:playA;
+  justify-self: center;
+  align-self:center;
+}
+
+.stone-red{
+  grid-area:redA;
+}
+
+.stone-green {
+  grid-area: greenA;
+}
+
+.stone-orange{
+  grid-area:orangeA;
+}
+
+.stone-purple{
+  grid-area:purpleA;
+}
+
+.stone-yellow{
+  grid-area:yellowA;
+}
+
+.stone-blue{
+  grid-area: blueA;
+
+}
+
+.stone-green 
+.stone-face{
+    background: green;
+    box-shadow: inset 0 0 50px 0px green,  0 0 100px 15px green;
+    animation-delay: 2s;
+}
+
+.stone-orange
+.stone-face {
+  background: orange;
+  box-shadow: inset 0 0 50px 0px orangered,  0 0 100px 15px orangered; 
+  animation-delay: 1s;
+}
+.stone-purple
+.stone-face{ 
+  background: purple;
+  box-shadow: inset 0 0 50px 0px purple,  0 0 100px 15px purple; 
+  animation-delay: 1.5s;
+}
+
+
+.light{
+  box-shadow: inset 0 0 50px 0px white,  0 0 100px 15px white;
+}
+
+.stone-yellow 
+.stone-face{
+  background: yellow;
+  box-shadow: inset 0 0 50px 0px yellow,  0 0 100px 15px yellow;
+}
+
+.stone-blue 
+.stone-face
+{
+  background: blue;
+  box-shadow: inset 0 0 50px 0px blue,  0 0 100px 15px blue;
+  animation-delay: .5s;
+}
+
+
+/* ------------------------------>btn */
+
+.btn {
+  display: inline-block;
+  padding: 8px 50px 6px;
+  margin-bottom: 0;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  line-height: 20px;
+  color: #ffffff;
+  text-align: center;
+  text-shadow: 0 1px 1px
+  rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: #ee171f;
+  background-image: -webkit-linear-gradient( rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0.05) 95% );
+  background-image: -moz-linear-gradient(
+  rgba(255, 255, 255, 0.1) 0%,
+  rgba(0, 0, 0, 0.05) 95% );
+  background-image: -linear-gradient( rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0.05) 95% );
+  background-image: -ms-linear-gradient( rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0.05) 95% );
+  background-repeat: repeat-x;
+  border: 0;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 50px;
+  -webkit-box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transition: 0.1s;
+  -moz-transition: 0.1s;
+  transition: 0.1s;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 50px;
+
+}
+
+.btn:hover {
+  background-color: 
+#ff000a;
+-webkit-box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.2);
+-moz-box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.2);
+box-shadow: inset 0 -4px 0
+rgba(0, 0, 0, 0.2);
+margin-top: -2px;
+padding: 6px 50px 6px;
+}
+
+.btn:active {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  margin-top: 2px;
+  padding: 8px 50px 6px;
+}
+
+/* ---------------------------------> Media */
+
+@media screen and (max-width: 767px){
+  .container{
+    margin: 0;
+    padding: 0;
+    align-content: center;
+    justify-content: center;
+    display: grid;
+    column-gap: 150px;
+    row-gap:10px ;
+    grid-template-columns: 1fr, 1fr; 
+    grid-template-areas: "redA orangeA"
+                          "greenA purpleA"
+                          "yellowA blueA"  
+                          "playA playA"                      
+                          
+
+                          /* "redA orangeA greenA"                        
+                          " playA playA playA "                       
+                          "purpleA yellowA blueA"; */
+                          
+  }
+
+  }
