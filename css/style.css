@@ -165,6 +165,10 @@ body{
 
 /* ------------------------------>btn */
 
+.hide {
+  display: none;
+}
+
 .btn {
   display: inline-block;
   padding: 8px 50px 6px;

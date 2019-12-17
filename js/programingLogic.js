@@ -16,7 +16,7 @@ class Game{
 
   }
 
-  inicializar() {
+  start() {
     this.nextLevel= this.nextLevel.bind(this)
     this.chooseColor= this.chooseColor.bind(this)
     this.toggleBtnGo()
@@ -31,5 +31,17 @@ class Game{
     }
   }
 
+  toggleBtnPlay(){
+    if(btnPlay.classList.contains('hide')){
+      btnPlay.classList.remove('hide')
+    }else{
+      btnPlay.classList.add('hide')
+    }
+  }
 
+
+}
+
+function playGame() {
+  window.juego = new Juego()
 }
