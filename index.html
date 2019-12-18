@@ -10,44 +10,63 @@
 <body>
   <div class="gameboard">
 <div class="container">
+  <section class="sound__secuencia">
+    <audio id="sound_do" src="sound/do.wav"></audio>
+    <audio id="sound_re" src="sound/re.wav"></audio>
+    <audio id="sound_mi" src="sound/mi.wav"></audio>
+    <audio id="sound_fa" src="sound/fa.wav"></audio>
+    <audio id="sound_sol" src="sound/sol.wav"></audio>
+    <audio id="sound_la" src="sound/la.wav"></audio>
+  
+</section>
   
  <button id="btnPlay" class="btn" onclick="playGame()">PLAY</button>
     
-  <div id="sRed" class="infinity-stone stone-red">
-    <div class="stone-face stone-face-front"></div>
+  <div id="sRed" class=" infinity-stone stone-red">
+    <div class="stone-face stone-face-front" data-color="sRed"></div>
     <div class="stone-face stone-face-back"></div>
   </div>
   
-  <div id="sGreen" class="infinity-stone stone-green">
-    <div class="stone-face stone-face-front"></div>
+  <div id="sGreen" class=" infinity-stone stone-green" >
+    <div class="stone-face stone-face-front" data-color="sGreen"></div>
     <div class="stone-face stone-face-back"></div>
   </div>
   
-  <div id="sOrange" class="infinity-stone stone-orange ">
-    <div class="stone-face stone-face-front"></div>
+  <div id="sOrange" class=" infinity-stone stone-orange" >
+    <div class="stone-face stone-face-front" data-color="sOrange"></div>
     <div class="stone-face stone-face-back"></div>
   </div>
   
-  <div id="sPurple" class="infinity-stone stone-purple">
-    <div class="stone-face stone-face-front"></div>
+  <div id="sPurple" class=" infinity-stone stone-purple" >
+    <div class="stone-face stone-face-front" data-color="sPurple"></div>
     <div class="stone-face stone-face-back"></div>
   </div>
   
-  <div id="sYellow" class="infinity-stone stone-yellow">
-    <div class="stone-face stone-face-front"></div>
+  <div id="sYellow" class=" infinity-stone stone-yellow" >
+    <div class="stone-face stone-face-front" data-color="sYellow"></div>
     <div class="stone-face stone-face-back"></div>
   </div>
   
-  <div id="sBlue" class="infinity-stone stone-blue">
-    <div class="stone-face stone-face-front"></div>
+  <div id="sBlue" class=" infinity-stone stone-blue" >
+    <div class="stone-face stone-face-front" data-color="sBlue"></div>
     <div class="stone-face stone-face-back"></div>
   </div>
 
 </div>
 
 </div>
-
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js";>
+</script>
+<script src="js/programingLogic.js"></script>  
+<footer>
+  <br>
+  <br>
+  <br>
+  <br>
   
+  With 💙 by Giovanni Hernández
+  <br>
+  <br>
+</footer>
 </body>
 </html>
