@@ -1,3 +1,4 @@
+//Buttons 
 const sRed = document.getElementById("sRed");
 const sGreen = document.getElementById("sGreen");
 const sOrange = document.getElementById("sOrange");
@@ -5,6 +6,7 @@ const sPurple = document.getElementById("sPurple");
 const sYellow = document.getElementById("sYellow");
 const sBlue = document.getElementById("sBlue");
 const btnPlay = document.getElementById("btnPlay");
+//Sounds
 const sound_do = document.getElementById('sound_do')
 const sound_re = document.getElementById('sound_re')
 const sound_mi = document.getElementById('sound_mi')
@@ -12,7 +14,7 @@ const sound_fa = document.getElementById('sound_fa')
 const sound_sol = document.getElementById('sound_sol')
 const sound_la = document.getElementById('sound_la')
 const finalLevel = 10;
-
+//Builder
 class Game {
   constructor() {
     this.start = this.start.bind(this);
@@ -20,7 +22,7 @@ class Game {
     this.generateSequence();
     setTimeout(this.nextLevel, 500);
   }
-
+//Start the sequence
   start() {
     this.nextLevel = this.nextLevel.bind(this);
     this.chooseColor = this.chooseColor.bind(this);
@@ -43,7 +45,7 @@ class Game {
         sound_la
     }
   }
-
+// Turn on and off
   toggleBtnGo() {
     if (btnPlay.classList.contains("hide")) {
       btnPlay.classList.remove("hide");
@@ -51,16 +53,19 @@ class Game {
       btnPlay.classList.add("hide");
     }
   }
+  //Generate random sequence
   generateSequence() {
     this.sequence = new Array(finalLevel)
       .fill(0)
       .map(n => Math.floor(Math.random() * 6));
   }
+
   nextLevel() {
     this.sublevel = 0;
     this.illuminateSequence();
     this.addedEventsClic();
   }
+ 
   trasformNumberToColor(number) {
     switch (number) {
       case 0:
@@ -160,14 +165,12 @@ class Game {
         this.level++;
         this.removeEventosClick();
         if (this.level === finalLevel + 1) {
-          //ganaste brou
           this.wingame();
         } else {
           setTimeout(this.nextLevel, 1500);
         }
       }
     } else {
-      //perdiste bro
       this.gameOver();
     }
   }
